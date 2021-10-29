@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration debug="false">
+    <contextName>netty-samples</contextName>
+
+    <property name="LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS}, %msg%n"/>
+    <property name="NORMAL_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level - %logger{100} - %msg%n"/>
+    <property name="SERIOUS_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level - %-60.60class [%4line] - %msg%n"/>
+
+    <Appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <Layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>${NORMAL_PATTERN}</Pattern>
+        </Layout>
+    </Appender>
+
+    <ROOT level="debug">
+        <Appender-ref ref="STDOUT"/>
+    </ROOT>
+
+</Configuration>
